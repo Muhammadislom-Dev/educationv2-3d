@@ -2,3 +2,7 @@
   -webkit-background-clip: text !important;
   -webkit-text-stroke: 4px transparent;
 }
+
+.css-wubsqh:nth-child(1) {
+  margin: 0 !important;
+}

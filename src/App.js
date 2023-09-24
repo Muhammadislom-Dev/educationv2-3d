@@ -1,4 +1,6 @@
 import "./App.css";
+import Articles from "./components/moleculas/Articles";
+import Company from "./components/moleculas/Company";
 import Contact from "./components/moleculas/Contact";
 import Footer from "./components/moleculas/Footer";
 import Navbar from "./components/moleculas/Navbar";
@@ -8,7 +10,9 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <Company />
       <Rating />
+      <Articles />
       <Contact />
       <Footer />
     </div>

@@ -40,7 +40,7 @@ function About() {
                   border: "3px solid #C200FE",
                   background: "transparent",
                   width: "100%",
-                  height: "50px",
+                  height: "45px",
                   color: "#000",
                 }}
                 text="Sotib olish"

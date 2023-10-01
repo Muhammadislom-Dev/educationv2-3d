@@ -29,7 +29,7 @@ function Auth() {
         onCancel={onCancel}
         body={
           <SimpleGrid columns={2}>
-            <Box p="48px 56px">
+            <Box p="15px 56px">
               {state.name === "login" && (
                 <Login phoneNumber={state.phone} setState={setState} />
               )}

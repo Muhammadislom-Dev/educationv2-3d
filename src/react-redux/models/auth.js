@@ -12,8 +12,8 @@ const auth = {
       // const userRole = getUserRole(payload?.id_token);
       return {
         ...state,
-        token: payload?.token,
-        userData: payload?.user,
+        token: payload?.data.tokens.accessToken,
+        userData: payload?.data?.user,
       };
     },
     auth(state) {

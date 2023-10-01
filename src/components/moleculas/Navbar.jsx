@@ -33,15 +33,6 @@ function Navbar() {
               Contact
             </Link>
           </Flex>
-          {/* <Button
-            style={{
-              border: "3px solid #C200FE",
-              background: "transparent",
-              width: "217px",
-              height: "50px",
-            }}
-            text="SignUp"
-          /> */}
           <Auth />
         </Flex>
       </Box>

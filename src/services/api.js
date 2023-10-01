@@ -21,4 +21,5 @@ export const API = {
   //Post Request
 
   registerUser: (payload) => axiosInstance.post("/auth/signup"),
+  loginUser: (payload) => axiosInstance.post("/auth/signin", payload),
 };

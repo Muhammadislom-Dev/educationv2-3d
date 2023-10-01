@@ -74,10 +74,10 @@ function Register({ setState, phone }) {
         }}
         onClick={() => setState({ name: "login", phone: "" })}
       />
-      <Text fontSize="14px" mt="30px">
+      {/* <Text fontSize="14px" mt="30px">
         Регистрируясь, вы соглашаетесь с Условиями пользования и Политикой
         конфиденциальности вы подтверждаете свое согласие
-      </Text>
+      </Text> */}
     </>
   );
 }

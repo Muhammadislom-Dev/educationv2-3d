@@ -1,19 +1,26 @@
+import { useSelector } from "react-redux";
 import "./App.css";
-import Articles from "./components/moleculas/Articles";
-import Company from "./components/moleculas/Company";
-import Contact from "./components/moleculas/Contact";
 import Footer from "./components/moleculas/Footer";
 import Navbar from "./components/moleculas/Navbar";
-import Rating from "./components/moleculas/Rating";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/Home";
 
 function App() {
+  const token = useSelector((state) => state.auth);
+  console.log(token);
   return (
     <div className="App">
       <Navbar />
-      <Company />
-      <Rating />
-      <Articles />
-      <Contact />
+      {token ? (
+        <Routes>
+          <Route path="/user" element={<>Hello dunyo</>} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Navigate to={"/"} />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      )}
       <Footer />
     </div>
   );

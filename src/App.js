@@ -6,18 +6,17 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 
 function App() {
-  const token = useSelector((state) => state.auth);
+  const token = useSelector((state) => state.auth.token);
   console.log(token);
   return (
     <div className="App">
       <Navbar />
       {token ? (
         <Routes>
-          <Route path="/user" element={<>Hello dunyo</>} />
+          <Route path="/" element={<>Hello dunyo</>} />
         </Routes>
       ) : (
         <Routes>
-          <Route path="/" element={<Navigate to={"/"} />} />
           <Route path="/" element={<Home />} />
         </Routes>
       )}

@@ -10,24 +10,20 @@ import { dispatch } from "../../../react-redux";
 import { API } from "../../../services/api";
 import { useMutation } from "react-query";
 import { toast } from "react-toastify";
-import { Navigate } from "react-router-dom";
 
-const values = {
-  phone: "",
-};
-
-function Login({ phoneNumber, setState }) {
+function Login({ setState, onCancel }) {
   const {
+    handleSubmit,
     control,
     formState: { errors },
     register,
     watch,
-  } = useForm(values);
+  } = useForm();
   const { mutate } = useMutation(async (payload) => {
     return await API.loginUser(payload)
       .then((res) => {
         dispatch.auth.login(res.data);
-        <Navigate to="/user" replace />;
+        onCancel();
       })
       .catch((error) => {
         console.log("Auth dispatch  error", error);
@@ -36,6 +32,7 @@ function Login({ phoneNumber, setState }) {
   });
 
   const onSubmit = (data) => {
+    console.log(data);
     mutate({ ...data });
   };
   return (
@@ -74,7 +71,7 @@ function Login({ phoneNumber, setState }) {
         />
         <Button
           //   loading={loading}
-          onClick={onSubmit}
+          onClick={handleSubmit(onSubmit)}
           text="Продолжить"
           disabled={watch("phone_number")?.length < 11}
           style={css.submitButton}

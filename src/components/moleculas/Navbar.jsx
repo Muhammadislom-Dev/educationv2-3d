@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Link, ButtonGroup } from "@chakra-ui/react";
 import React from "react";
 import NavButton from "../../assets/icons/NavButton";
-import Button from "../atoms/Button";
+import Auth from "../../pages/Auth/Auth";
 
 function Navbar() {
   return (
@@ -33,15 +33,16 @@ function Navbar() {
               Contact
             </Link>
           </Flex>
-          <Button
+          {/* <Button
             style={{
               border: "3px solid #C200FE",
               background: "transparent",
               width: "217px",
               height: "50px",
             }}
-            text="Connect To Wallet"
-          />
+            text="SignUp"
+          /> */}
+          <Auth />
         </Flex>
       </Box>
     </Box>

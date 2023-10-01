@@ -88,6 +88,11 @@ const css = {
     boxShadow: "0 5px 20px rgba(0,0,0,0.25)",
     width: "100%",
     margin: "15px 0",
+    transition: "0.3s all ease",
+
+    _hover: {
+      border: "1px solid #c0f",
+    },
   },
   image: {
     width: "100%",

@@ -51,10 +51,6 @@ const css = {
     background: "#181124",
     padding: "50px 0",
   },
-  card: {
-    background: "rgba(0,0,0,0.7)",
-    zIndex: "1002",
-  },
   image: {
     height: "675px",
     width: "1200px",

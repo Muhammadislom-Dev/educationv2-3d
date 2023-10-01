@@ -31,11 +31,7 @@ function Auth() {
           <SimpleGrid columns={2}>
             <Box p="15px 56px">
               {state.name === "login" && (
-                <Login
-                  onCancel={onCancel}
-                  phoneNumber={state.phone}
-                  setState={setState}
-                />
+                <Login onCancel={onCancel} setState={setState} />
               )}
               {state.name === "register" && (
                 <Register

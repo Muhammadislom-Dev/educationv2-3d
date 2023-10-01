@@ -1,9 +1,13 @@
-import { Box, Flex, Heading, Link, ButtonGroup } from "@chakra-ui/react";
+import { Box, Flex, Heading, Link, ButtonGroup, Image } from "@chakra-ui/react";
 import React from "react";
 import NavButton from "../../assets/icons/NavButton";
 import Auth from "../../pages/Auth/Auth";
+import { useSelector } from "react-redux";
+import PersonImage from "../../assets/images/person.jpg";
 
 function Navbar() {
+  const userData = useSelector((state) => state.auth.userData);
+  console.log(userData);
   return (
     <Box {...css.box}>
       <Box className="container">
@@ -33,7 +37,20 @@ function Navbar() {
               Contact
             </Link>
           </Flex>
-          <Auth />
+          {userData ? (
+            <Flex align="center" gap="10px">
+              <Image
+                style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+                src={PersonImage}
+                alt="Person Image"
+              />
+              <Heading fontSize="25px" color="#fff">
+                {userData.first_name}
+              </Heading>
+            </Flex>
+          ) : (
+            <Auth />
+          )}
         </Flex>
       </Box>
     </Box>

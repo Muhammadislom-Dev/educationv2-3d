@@ -80,7 +80,7 @@ input::-webkit-inner-spin-button {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: #C200FE;
+  background-color: #c200fe;
 }
 
 .ant-modal-mask {
@@ -105,4 +105,16 @@ input::-webkit-inner-spin-button {
 :where(.css-dev-only-do-not-override-1me4733).ant-collapse {
   margin: 15px 0;
   background: #f5f8fc;
+}
+
+.about-text {
+  white-space: normal;
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 30px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  font-weight: 400;
 }

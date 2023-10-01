@@ -71,7 +71,7 @@ function Register({ setState, phone }) {
           width: "100%",
           height: "48px",
           my: "12px",
-          color:"#c0f"
+          color: "#c0f",
         }}
         onClick={() => setState({ name: "login", phone: "" })}
       />

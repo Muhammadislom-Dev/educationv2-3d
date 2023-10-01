@@ -54,6 +54,7 @@ function Login({ phoneNumber, setState }) {
           width: "100%",
           height: "48px",
           marginTop: "280px",
+          color: "#c0f",
         }}
         onClick={() => setState({ name: "register", phone: "" })}
       />

@@ -19,7 +19,6 @@ function Register({ setState, phone }) {
     control,
     formState: { errors },
     watch,
-    // setValue,
   } = useForm(values);
   return (
     <>

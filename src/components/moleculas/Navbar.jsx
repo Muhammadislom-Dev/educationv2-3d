@@ -1,12 +1,33 @@
-import { Box, Flex, Heading, Link, ButtonGroup, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Link,
+  ButtonGroup,
+  Image,
+  MenuButton,
+  Menu,
+  MenuList,
+  Button,
+  MenuItem,
+} from "@chakra-ui/react";
 import React from "react";
 import NavButton from "../../assets/icons/NavButton";
 import Auth from "../../pages/Auth/Auth";
 import { useSelector } from "react-redux";
 import PersonImage from "../../assets/images/person.jpg";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+import { dispatch } from "../../react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
+  const onLogoutClick = () => {
+    dispatch.auth.logoutAsync();
+    navigate("/");
+  };
+
   console.log(userData);
   return (
     <Box {...css.box}>
@@ -37,17 +58,31 @@ function Navbar() {
               Contact
             </Link>
           </Flex>
-          {userData ? (
-            <Flex align="center" gap="10px">
-              <Image
-                style={{ width: "50px", height: "50px", borderRadius: "50%" }}
-                src={PersonImage}
-                alt="Person Image"
-              />
-              <Heading fontSize="25px" color="#fff">
-                {userData.first_name}
-              </Heading>
-            </Flex>
+          {userData?.length > 0 ? (
+            <Menu>
+              <MenuButton
+                style={{ background: "transparent" }}
+                as={Button}
+                rightIcon={<ChevronDownIcon color="#fff" />}>
+                <Flex align="center" gap="10px">
+                  <Image
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      borderRadius: "50%",
+                    }}
+                    src={PersonImage}
+                    alt="Person Image"
+                  />
+                  <Heading fontSize="20px" color="#fff">
+                    {userData.first_name}
+                  </Heading>
+                </Flex>
+              </MenuButton>
+              <MenuList ml="15px">
+                <MenuItem onClick={onLogoutClick}>Download</MenuItem>
+              </MenuList>
+            </Menu>
           ) : (
             <Auth />
           )}
@@ -99,7 +134,6 @@ const css = {
     width: "50px",
     height: "50px",
     borderRadius: "50px",
-    opacity: 0.15,
     background: "rgba(255, 255, 255, 0.00)",
     boxShadow: "0px 5px 20px 0px #C0F",
     display: "flex",

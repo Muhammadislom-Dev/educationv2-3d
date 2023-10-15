@@ -25,7 +25,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(90deg, #1b121d 0, #120f2f 50%, #1b121d 100%) !important;
 }
+
+/* body::before {
+  content: "";
+  top: 45%;
+  left: 45%;
+  position: fixed;
+  filter: blur(150px);
+  background-color: #cc00ff;
+}
+
+body::after {
+  content: "";
+  top: 42.8%;
+  right: 25%;
+  position: fixed;
+  background-color: #7000ff;
+  filter: blur(150px);
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

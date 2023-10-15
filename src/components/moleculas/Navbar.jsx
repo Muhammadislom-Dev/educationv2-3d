@@ -29,6 +29,7 @@ function Navbar() {
   };
 
   console.log(userData);
+
   return (
     <Box {...css.box}>
       <Box className="container">
@@ -58,7 +59,9 @@ function Navbar() {
               Contact
             </Link>
           </Flex>
-          {userData?.length > 0 ? (
+          {userData?.length === 0 ? (
+            <Auth />
+          ) : (
             <Menu>
               <MenuButton
                 style={{ background: "transparent" }}
@@ -75,16 +78,15 @@ function Navbar() {
                     alt="Person Image"
                   />
                   <Heading fontSize="20px" color="#fff">
-                    {userData.first_name}
+                    {userData?.first_name}
                   </Heading>
                 </Flex>
               </MenuButton>
+
               <MenuList ml="15px">
-                <MenuItem onClick={onLogoutClick}>Download</MenuItem>
+                <MenuItem onClick={onLogoutClick}>Log Out</MenuItem>
               </MenuList>
             </Menu>
-          ) : (
-            <Auth />
           )}
         </Flex>
       </Box>
